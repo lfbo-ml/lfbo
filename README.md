@@ -4,9 +4,9 @@
 
 Code for **A General Recipe for Likelihood-free Bayesian Optimization**.
 
-[Jiaming Song*](https://tsong.me/), [Lantao Yu*](http://lantaoyu.com/), [Willie Neiswanger](https://willieneis.github.io/), [Stefano Ermon](https://cs.stanford.edu/~ermon/)
+[Jiaming Song*<sup>1</sup>](https://tsong.me/), [Lantao Yu*<sup>2</sup>](http://lantaoyu.com/), [Willie Neiswanger<sup>2</sup>](https://willieneis.github.io/), [Stefano Ermon<sup>2</sup>](https://cs.stanford.edu/~ermon/)
 
-Stanford University
+<sup>1</sup>NVIDIA, <sup>2</sup>Stanford University *Equal contribution
 
 ## Overview
 The acquisition function, a critical component in Bayesian optimization (BO), can often be written as the expectation of a utility function under a surrogate model. However, to ensure that acquisition functions are tractable to optimize, restrictions must be placed on the surrogate model and utility function. To extend BO to a broader class of models and utilities, we propose likelihood-free BO (LFBO), an approach based on likelihood-free inference.
