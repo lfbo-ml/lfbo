@@ -19,7 +19,7 @@ nasbench201_minimum = {'cifar10': 0.151080000098, 'cifar100': 0.3868, 'imagenet'
 if benchmark_name == 'nasbench201':
     loss_min = nasbench201_minimum[dataset_name]
 else:
-    DATASET_DIR = "/atlas/u/lantaoyu/projects/bore/bore-experiments/bin/drivers/sequential/datasets"
+    DATASET_DIR = "datasets"
     benchmark = make_benchmark(benchmark_name=benchmark_name, dataset_name=dataset_name, input_dir=DATASET_DIR)
     loss_min = benchmark.get_minimum()
 print("Minimum loss", loss_min)

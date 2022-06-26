@@ -12,7 +12,7 @@ DATASET_CHOICES = [
 ]
 WEIGHT_TYPE_CHOICES = ['pi', 'ei']
 MODEL_TYPE_CHOICES = ['mlp', 'rf', 'xgb']
-DATASET_DIR = "/atlas/u/lantaoyu/projects/bore/bore-experiments/bin/drivers/sequential/datasets"
+DATASET_DIR = "datasets"
 
 
 def run(args):

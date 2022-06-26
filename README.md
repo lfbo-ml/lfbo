@@ -34,7 +34,7 @@ Alternatively, for HPOBench datasets with MLP/Random Forest classifiers (`--mode
 python lfbo_benchmark.py --benchmark nasbench201 --dataset cifar100 --weight_type ei --model_type xgb --iterations 200 --start_seed 0 --end_seed 99
 ```
 
-After running the experiments, you may use `plot_results.py` to generate the results in `figures/`.
+After running the experiments, you may use `plot_results.py` to generate the results in [`figures/`](https://github.com/lfbo-ml/lfbo/tree/main/figures).
 
 ## Acknowledgements
 This implementation is based on [BORE](https://github.com/ltiao/bore).
