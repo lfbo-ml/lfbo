@@ -10,9 +10,9 @@ DATASET_CHOICES = [
     'naval', 'parkinsons', 'protein', 'slice',  # for fcnet_alt
     'cifar10', 'cifar100', 'imagenet'  # for nasbench201
 ]
-WEIGHT_TYPE_CHOICES = ['pi', 'ei']
-MODEL_TYPE_CHOICES = ['mlp', 'rf', 'xgb']
-DATASET_DIR = "datasets"
+WEIGHT_TYPE_CHOICES = ['pi', 'ei']  # ei: Expected Improvement, pi: Probability of Improvement
+MODEL_TYPE_CHOICES = ['mlp', 'rf', 'xgb']  # mlp: MLP, rf: Random Forest, xgb: XGBoost Classifier
+DATASET_DIR = "datasets"  # Your dataset directory
 
 
 def run(args):
