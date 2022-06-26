@@ -1,2 +1,40 @@
-# lfbo
-Code for A General Recipe for Likelihood-free Bayesian Optimization, ICML 2022
+# A General Recipe for Likelihood-free Bayesian Optimization
+
+[**Website**](https://lfbo-ml.github.io/)
+
+Code for **A General Recipe for Likelihood-free Bayesian Optimization**.
+
+[Jiaming Song*](https://tsong.me/), [Lantao Yu*](http://lantaoyu.com/), [Willie Neiswanger](https://willieneis.github.io/), [Stefano Ermon](https://cs.stanford.edu/~ermon/)
+
+Stanford University
+
+## Overview
+The acquisition function, a critical component in Bayesian optimization (BO), can often be written as the expectation of a utility function under a surrogate model. However, to ensure that acquisition functions are tractable to optimize, restrictions must be placed on the surrogate model and utility function. To extend BO to a broader class of models and utilities, we propose likelihood-free BO (LFBO), an approach based on likelihood-free inference.
+
+LFBO directly models the acquisition function without having to separately perform inference with a probabilistic surrogate model. We show that computing the acquisition function in LFBO can be reduced to optimizing a weighted classification problem, where the weights correspond to the utility being chosen. LFBO outperforms various state-of-the-art black-box optimization methods on several real-world optimization problems. LFBO can also effectively leverage composite structures of the objective function, which further improves its regret by several orders of magnitude.
+
+## Getting started
+Install required packages:
+```pip install -r requirements.txt```
+
+Download and install datasets: [HPOBench](https://github.com/automl/nas_benchmarks) and [NAS-Bench-201](https://github.com/D-X-Y/NAS-Bench-201)
+
+## How to run LFBO
+The `lfbo_benchmark.py` provides the basic script to run experiments on various datasets using different methods.
+Here are some examples:
+
+- For HPObench datasets, run LFBO (Expected Improvement) 200 steps for 100 random seeds sequentially using Random Forest classifier:
+```
+python lfbo_benchmark.py --benchmark fcnet_alt --dataset parkinsons --weight_type ei --model_type rf --iterations 200 --start_seed 0 --end_seed 99
+```
+Alternatively, for HPOBench datasets with MLP/Random Forest classifiers (`--model_type mlp` or `--model_type rf`), you may use `bash parallel_run.sh` to launch multiple jobs in parallel.
+
+- For NAS-Bench-201 datasets, run LFBO (Expected Improvement) 200 steps for 100 random seeds sequentially using XGBoost classifier:
+```
+python lfbo_benchmark.py --benchmark nasbench201 --dataset cifar100 --weight_type ei --model_type xgb --iterations 200 --start_seed 0 --end_seed 99
+```
+
+After running the experiments, you may use `plot_results.py` to generate the results in `figures/`.
+
+## Acknowledgements
+This implementation is based on [BORE](https://github.com/ltiao/bore).
