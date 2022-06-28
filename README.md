@@ -1,25 +1,26 @@
 # A General Recipe for Likelihood-free Bayesian Optimization
 
-[**Website**](https://lfbo-ml.github.io/)
+[![arXiv](https://img.shields.io/badge/arXiv-2206.13035-b31b1b.svg)](https://arxiv.org/abs/2206.13035)
+[![lfbo](https://img.shields.io/badge/Project%20page-lfbo--ml.github.io-blue)](htttps://lfbo-ml.github.io)
+<img src="./figures/demo.png" width="70%">
 
-Code for **A General Recipe for Likelihood-free Bayesian Optimization**.
+> [**A General Recipe for Likelihood-free Bayesian Optimization**](https://arxiv.org/abs/2206.13035). <br/>
+> [Jiaming Song*<sup>1</sup>](https://tsong.me/), [Lantao Yu*<sup>2</sup>](http://lantaoyu.com/), [Willie Neiswanger<sup>2</sup>](https://willieneis.github.io/), [Stefano Ermon<sup>2</sup>](https://cs.stanford.edu/~ermon/) <br/>
+> <sup>1</sup>NVIDIA, <sup>2</sup>Stanford University *Equal contribution
 
-[Jiaming Song*<sup>1</sup>](https://tsong.me/), [Lantao Yu*<sup>2</sup>](http://lantaoyu.com/), [Willie Neiswanger<sup>2</sup>](https://willieneis.github.io/), [Stefano Ermon<sup>2</sup>](https://cs.stanford.edu/~ermon/)
 
-<sup>1</sup>NVIDIA, <sup>2</sup>Stanford University *Equal contribution
-
-## Overview
+## ✨ Overview
 The acquisition function, a critical component in Bayesian optimization (BO), can often be written as the expectation of a utility function under a surrogate model. However, to ensure that acquisition functions are tractable to optimize, restrictions must be placed on the surrogate model and utility function. To extend BO to a broader class of models and utilities, we propose likelihood-free BO (LFBO), an approach based on likelihood-free inference.
 
 LFBO directly models the acquisition function without having to separately perform inference with a probabilistic surrogate model. We show that computing the acquisition function in LFBO can be reduced to optimizing a weighted classification problem, where the weights correspond to the utility being chosen. LFBO outperforms various state-of-the-art black-box optimization methods on several real-world optimization problems. LFBO can also effectively leverage composite structures of the objective function, which further improves its regret by several orders of magnitude.
 
-## Getting started
+## 🔨 Getting started
 Install required packages:
 ```pip install -r requirements.txt```
 
 Download and install datasets: [HPOBench](https://github.com/automl/nas_benchmarks) and [NAS-Bench-201](https://github.com/D-X-Y/NAS-Bench-201)
 
-## How to run LFBO
+## ➡️ How to run LFBO
 The `lfbo_benchmark.py` provides the basic script to run experiments on various datasets using different methods.
 Here are some examples:
 
@@ -38,5 +39,17 @@ python lfbo_benchmark.py --benchmark nasbench201 --dataset cifar100 --weight_typ
 
 - After running the experiments, you may use `plot_results.py` to generate the results in [`figures/`](https://github.com/lfbo-ml/lfbo/tree/main/figures).
 
-## Acknowledgements
+## ✏️ Reference
+If you think this project is helpful, please feel free to give a star⭐️ and cite our paper:
+```
+@inproceedings{song2022a,
+  title={A General Recipe for Likelihood-free Bayesian Optimization},
+  author={Song*, Jiaming and Yu*, Lantao and Neiswanger, Willie and Ermon, Stefano},
+  booktitle={International Conference on Machine Learning},
+  year={2022}
+}
+
+```
+
+## 👍 Acknowledgements
 This implementation is based on [BORE](https://github.com/ltiao/bore).
