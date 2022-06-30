@@ -1,7 +1,7 @@
 # A General Recipe for Likelihood-free Bayesian Optimization
 
 [![arXiv](https://img.shields.io/badge/arXiv-2206.13035-b31b1b.svg)](https://arxiv.org/abs/2206.13035)
-[![lfbo](https://img.shields.io/badge/Project%20page-lfbo--ml.github.io-blue)](htttps://lfbo-ml.github.io)
+[![lfbo](https://img.shields.io/badge/Project%20page-lfbo--ml.github.io-blue)](https://lfbo-ml.github.io)
 <img src="./figures/demo.png" width="70%">
 
 > [**A General Recipe for Likelihood-free Bayesian Optimization**](https://arxiv.org/abs/2206.13035). <br/>
